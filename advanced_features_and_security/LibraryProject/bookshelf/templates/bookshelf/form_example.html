@@ -1,0 +1,26 @@
+<<<<<<< HEAD
+<h2>New Book</h2>
+<form method="POST" action= "{% url 'book-list'%}" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit"  value=''>Add book</button>
+</form>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+</head>
+<body>
+    <h1>Form Example</h1>
+    <form method="post" action="{% url 'form_example' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
+>>>>>>> 16dee7aeb905a470e30d02d3bea5cea76272bc25

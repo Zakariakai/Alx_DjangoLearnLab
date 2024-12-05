@@ -1,0 +1,53 @@
+<<<<<<< HEAD
+<!-- list_books.html -->
+=======
+>>>>>>> 16dee7aeb905a470e30d02d3bea5cea76272bc25
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<<<<<<< HEAD
+    <title>List of Books</title>
+</head>
+{% if request.user.is_authenticated %}
+    <p> {{request.user}} is logged in</p>
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" > logout</button>
+    </form>
+{% else %}
+    <p> {{request.user}} is logged</p>
+    <a href= "{% url 'login' %}">Login</a>
+
+{% endif %}
+<hr>
+
+<body>
+    <h1>Books Available:</h1>
+    <ul>
+        {% for book in books %}
+        <li>{{ book.title }} by {{ book.author }}</li>
+        {% endfor %}
+    </ul>
+    <a href = "{% url 'book-new' %}" >Add Book
+        {% include './icons/file-earmark-plus.svg' %}
+    </a>
+</body>
+</html>
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+</head>
+<body>
+    <h1>Book List</h1>
+    <a href="{% url 'create_book' %}">Add New Book</a>
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{% url 'book_details' book.pk %}">{{ book.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+>>>>>>> 16dee7aeb905a470e30d02d3bea5cea76272bc25
